@@ -3,4 +3,10 @@ class Post < ApplicationRecord
   validates :title, presence: true
 
   belongs_to :author, class_name: "User"
+
+  scope :ordered, -> { order(id: :desc) }
+
+  def time_format
+    created_at.strftime("%b %-d, %Y")
+  end
 end

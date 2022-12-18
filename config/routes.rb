@@ -7,7 +7,9 @@ Rails.application.routes.draw do
     resources :posts, only:[:new, :create, :index]
   end
 
-  resources :posts, only: [:show, :edit, :update, :destroy]
+  resources :posts, only: [:show, :edit, :update, :destroy] do
+    # resources :likes
+  end
   # Defines the root path route ("/")
   # root "articles#index"
   root "posts#index"
