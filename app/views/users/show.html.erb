@@ -9,9 +9,10 @@
       </div>
 
       <%if current_user == @user %>
-        <%= if current_user.friends%>
-        <%= button_to 'Add Friend'%>
-      <% else %>
+        <%= button_to 'Add Friend', user_friend_requests_path(@user.id), 
+                    params: { friend_request: {sender_id: current_user.id ,
+                                              receiver_id: @user.id}} %>      
+        <% else %>
       <% end %>
     </div>
 
