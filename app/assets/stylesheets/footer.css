@@ -2,4 +2,15 @@
   background-color: rgb(66, 103, 178);
   height: 50px;
   flex-shrink: 0;
+  color: white;
+  font-size: 18pt;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.footer a, .footer a:hover, .footer a:visited {
+  text-decoration: underline;
+  color: white;
+}
+
