@@ -1,4 +1,10 @@
 .profile {
   grid-area: 1 / 1 / 4 / 2;
   background-color: white;
+  display: grid;
+  grid-template-rows: 1fr 4fr;
+}
+
+.profile .name {
+
 }
