@@ -13,6 +13,9 @@
             <%= link_to "#{friend.email}", user_path(friend) %>
           </li>
         <% end %>
+        <li>
+          <%= link_to "Make New Friends", users_path,{:style=>'color:blue;'} %>
+        </li>
       </div>
     </ul>
   </div>

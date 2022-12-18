@@ -37,3 +37,7 @@
   display: grid;
   grid-template-rows: 1fr 1fr;
 }
+
+.new-friends {
+  color: blue;
+}
