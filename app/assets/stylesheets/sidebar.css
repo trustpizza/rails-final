@@ -12,6 +12,7 @@
   grid-template-rows: 1fr 1fr 1fr;
   padding-left: 10px;
   height: 90vh;
+  position: sticky;
 }
 
 .sidebar > .sidebar-item-group {
