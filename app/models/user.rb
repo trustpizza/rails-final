@@ -8,10 +8,11 @@ class User < ApplicationRecord
 
   has_many :sent_friend_requests, foreign_key: :sender_id, class_name: 'FriendRequest', dependent: :destroy
   has_many :received_friend_requests, foreign_key: :receiver_id, class_name: 'FriendRequest', dependent: :destroy
-  
+
+  # Friends modeling
+
   has_many :began_friendships, foreign_key: :user_id, class_name: "Friendship", dependent: :destroy
   has_many :accepted_friendships, foreign_key: :friend_id, class_name: "Friendship", dependent: :destroy
   has_many :began_friends, through: :began_friendships, source: :friend, dependent: :destroy
   has_many :accepted_friends, through: :accepted_friendships, source: :user, dependent: :destroy
-
 end
