@@ -8,7 +8,7 @@
   <div class="empty"></div>
   <div class="header-right">
     <div class="header-new-post">
-      <%= link_to 'Post', user_post_path %>
+      <%= link_to 'Post', new_user_post_url(current_user.id)%>
     </div>
     <div class="header-profile">Profile</div>
     <div class="header-logout">Logout</div>

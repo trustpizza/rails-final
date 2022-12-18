@@ -1,4 +1,5 @@
 <%= form_with(model: @post, url: user_posts_path(current_user.id)) do |f| %>
+
   <% if @post.errors.any? %>
     <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being created </h2>
 
@@ -8,6 +9,7 @@
       <% end %>
     </ul>
   <% end %>
+
   <%= f.label :title %>
   <%= f.text_field :title  %> <br>
 
@@ -15,4 +17,5 @@
   <%= f.text_area :body %> <br>
 
   <%= f.submit "Post" %>
+
 <% end %>
