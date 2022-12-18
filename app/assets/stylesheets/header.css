@@ -1,9 +1,41 @@
 .header {
   border: 1px solid black;
-}
-
-.header {
-  height: 10%;
+  height: 75px;
   background-color: rgb(66, 103, 178);
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  padding: 15px;
+  color: white;
+
 }
 
+.header-left {
+  display: grid;
+  width: 15%;
+  grid-template-columns: 1fr 3fr;
+  align-items: center;
+  gap: 0px;;
+}
+
+.header-welcome {
+  font-weight: 500;
+  font-size: 40pt;
+}
+
+.header-right {
+  align-self: center;
+  justify-self: center;
+  display: grid;
+  width: min-content;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
+
+.header-right * {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22pt;
+}
