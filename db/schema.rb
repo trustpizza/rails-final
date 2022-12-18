@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_17_235205) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_18_001208) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -21,6 +21,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_17_235205) do
     t.bigint "sender_id_id"
     t.index ["receiver_id_id"], name: "index_friend_requests_on_receiver_id_id"
     t.index ["sender_id_id"], name: "index_friend_requests_on_sender_id_id"
+  end
+
+  create_table "friendships", force: :cascade do |t|
+    t.bigint "users_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "friend_id"
+    t.index ["friend_id"], name: "index_friendships_on_friend_id"
+    t.index ["users_id"], name: "index_friendships_on_users_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -37,4 +46,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_17_235205) do
 
   add_foreign_key "friend_requests", "users", column: "receiver_id_id"
   add_foreign_key "friend_requests", "users", column: "sender_id_id"
+  add_foreign_key "friendships", "users", column: "friend_id"
+  add_foreign_key "friendships", "users", column: "users_id"
 end
