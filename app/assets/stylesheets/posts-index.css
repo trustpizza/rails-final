@@ -15,4 +15,25 @@
   border-radius: 5px;
   padding: 5px;
   min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 5PX;;
+}
+
+.card * {
+  border: solid black 1px;
+  padding: 5px;
+}
+
+.card-title {
+  
+}
+
+
+.card-body {
+  flex-grow: 1;
+}
+
+.card-add-ons {
+
 }

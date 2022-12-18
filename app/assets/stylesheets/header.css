@@ -27,7 +27,7 @@
   justify-self: center;
   display: grid;
   width: min-content;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   justify-content: center;
   gap: 25px;
