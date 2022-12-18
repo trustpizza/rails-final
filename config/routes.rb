@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   end
 
   resources :posts, only: [:show, :edit, :update, :destroy] do
-    # resources :likes
+    resources :likes
   end
   # Defines the root path route ("/")
   # root "articles#index"
