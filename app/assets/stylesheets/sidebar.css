@@ -2,6 +2,7 @@
   flex: 1 0 auto;
   display: grid;
   grid-template-columns: 1fr 5fr;
+  grid-template-rows: 1fr min-content;
 }
 
 .main-container > .sidebar {
@@ -10,6 +11,7 @@
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
   padding-left: 10px;
+  height: 90vh;
 }
 
 .sidebar > .sidebar-item-group {
