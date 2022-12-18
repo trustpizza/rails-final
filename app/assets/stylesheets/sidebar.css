@@ -30,4 +30,10 @@
 }
 .sidebar-links {
   padding-left: 10px;
+
+}
+
+.friend-request, .friends {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
 }

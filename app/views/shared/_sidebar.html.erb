@@ -7,11 +7,13 @@
       <div class="sidebar-title">Friends</div>
     </div>
     <ul class="sidebar-links">
-      <li class="sidebar-link-item">link</li>
-      <li class="sidebar-link-item">link</li>
-      <li class="sidebar-link-item">link</li>
-      <li class="sidebar-link-item">link</li>
-      <li class="sidebar-link-item">link</li>
+      <div class="friends">
+        <% current_user.friends.each do |friend|%>
+          <li>
+            <%= link_to "#{friend.email}", user_path(friend) %>
+          </li>
+        <% end %>
+      </div>
     </ul>
   </div>
   <div class="sidebar-item-group">
@@ -23,23 +25,30 @@
   </div>
   <ul class="sidebar-links">
     <% current_user.received_friend_requests.each do |req|%>
-      <li> <%= button_to 'Accept',
-        user_friendships_path(current_user.id),
-        params: { friendship: { user_id: req.sender_id,
-                                friend_id: current_user.id
-                                },
-                  friend_request: { sender_id: req.sender_id, 
-                                    receiver_id: current_user.id
-                                  }
-                }
-        %>
-        <%= button_to 'Decline',
-        user_friend_request_path(current_user.id, req.sender.id),
-        method: :delete,
-        params: { friend_request: { sender_id: req.sender.id,
-                                    receiver_id: current_user.id }
-                }
-        %> </li>
+      <li> 
+        <div class="friend-request">
+          <%= req.sender.email %>
+          <div class="friend-buttons">
+            <%= button_to 'Accept',
+              user_friendships_path(current_user.id),
+              params: { friendship: { user_id: req.sender_id,
+                                      friend_id: current_user.id
+                                      },
+                        friend_request: { sender_id: req.sender_id,
+                                          receiver_id: current_user.id
+                                        }
+                      }
+            %>
+            <%= button_to 'Decline',
+              user_friend_request_path(current_user.id, req.sender.id),
+              method: :delete,
+              params: { friend_request: { sender_id: req.sender.id,
+                                          receiver_id: current_user.id }
+                      }
+            %>
+          </div> <br>
+        </div>
+      </li>
     <% end %>
   </ul> 
   </div>

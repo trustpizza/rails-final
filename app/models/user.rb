@@ -19,6 +19,6 @@ class User < ApplicationRecord
   has_many :posts, foreign_key: :author_id, dependent: :destroy
 
   def friends
-    began_friendships + accepted_friends
+    (began_friends + accepted_friends).uniq
   end
 end
