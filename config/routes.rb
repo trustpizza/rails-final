@@ -4,9 +4,11 @@ Rails.application.routes.draw do
   resources :users do 
     resources :friend_requests
     resources :friendships
-    resources :posts
+    resources :posts, only:[:new, :create, :index]
   end
+
+  resources :posts, only: [:show, :edit, :update, :destroy]
   # Defines the root path route ("/")
   # root "articles#index"
-  root "users#index"
+  root "posts#index"
 end
