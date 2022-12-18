@@ -1,8 +1,8 @@
 <%= render 'shared/header' %>
 <div class="main-container">
   <%= render 'shared/sidebar'%>
-  <% @post.each do |post|%>
-    <%= render 'posts/post' post: post%>
-  <% end %>
+  <div class="main-posts">
+    <%= render 'posts/new'%>
+  </div>
 </div>
 <%= render 'shared/footer'%>
