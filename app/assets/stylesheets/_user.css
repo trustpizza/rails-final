@@ -1,0 +1,44 @@
+.profile-card {
+  background-color: white;
+  border-radius: 5px;
+  padding: 5px;
+  gap: 5px;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: 3fr;
+  min-height: 200px;
+}
+
+.profile-card .pic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-card-right {
+  grid-area: 1/2/3/2;
+  display: grid;
+  grid-template-rows: 1fr 6fr;
+}
+
+.profile-card-right-top {
+  display: flex;
+}
+
+.profile-card-right-top * {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-card-right-top .name {
+  min-width: 20%;
+}
+
+.profile-card-right-top .friend-button {
+  flex: 1;
+}
+
+.profile-card * {
+  border: 1px solid black;
+}
