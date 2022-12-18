@@ -1,0 +1,9 @@
+<%= form_for :comment, url: post_comments_path(params[:post_id]) do |form| %>
+  <%= form.hidden_field :commenter_id, value: current_user.id %>
+  <%= form.label :body, "Comment:" %>
+  <%= form.text_area :body, rows: 4, placeholder: "Enter your text here...",
+                     required: "required" %>
+
+  <button type="button"  data-bs-dismiss="modal">Close</button>
+  <button type="submit" data-bs-dismiss="modal">Post Comment</button>
+<% end %>

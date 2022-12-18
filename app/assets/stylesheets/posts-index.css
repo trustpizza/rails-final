@@ -19,9 +19,10 @@
   gap: 5PX;;
 }
 
-.card * {
-  border: solid black 1px;
+.card > * {
   padding: 5px;
+  border: solid black 1px;
+
 }
 
 .card-title {

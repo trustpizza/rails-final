@@ -3,7 +3,11 @@
     <%=post.title%>
   </div>
   <div class="card-body">
-    <%= post.body %>
+    <div>Post:<%= post.body %></div> <br> <br>
+    <% post.comments.each do |c|%>
+      <%= c.body %> <br>
+      <div>by <%= c.commenter.email%></div> <br>
+    <% end %>
   </div>
   <div class="card-add-ons">
     <%= post.author.email %>
@@ -17,5 +21,6 @@
                           </svg>
       <% end %>
     <% end %>
+    <%= link_to "Add a comment", new_post_comment_path(post), post: post %>
   </div>
 </div>

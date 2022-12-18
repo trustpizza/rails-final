@@ -12,7 +12,7 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @post = Post.find_by(params[:id])
+    @post = Post.find(params[:post_id])
     @comment = @post.comments.build(comment_params)
 
     if @comment.save
