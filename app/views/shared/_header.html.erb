@@ -10,7 +10,11 @@
     <div class="header-new-post">
       <%= link_to 'Post', new_user_post_url(current_user.id)%>
     </div>
-    <div class="header-profile">Profile</div>
-    <div class="header-logout">Logout</div>
+    <div class="header-profile">
+      <%= link_to 'Profile', user_path(current_user)%>
+    </div>
+    <div class="header-logout">
+      <%= button_to "Logout", destroy_user_session_path, :method => :delete, data: { turbo: false } %>
+    </div>
   </div>
 </div>
